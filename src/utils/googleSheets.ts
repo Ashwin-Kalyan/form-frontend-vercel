@@ -17,6 +17,7 @@ export interface FormSubmission {
   faculty: string
   desiredPosition: string
   desiredYear: string
+  age: string
   email: string
   interests: string[]
   comments: string

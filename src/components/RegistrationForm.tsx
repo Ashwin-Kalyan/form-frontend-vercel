@@ -8,6 +8,7 @@ interface FormData {
   facultyOther: string
   desiredPosition: string
   desiredYear: string
+  age: string
   email: string
   emailConfirm: string
   interests: string[]
@@ -28,6 +29,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
     facultyOther: '',
     desiredPosition: '',
     desiredYear: '',
+    age: '',
     email: '',
     emailConfirm: '',
     interests: [],
@@ -116,6 +118,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
           faculty: formData.faculty === 'other' ? formData.facultyOther : formData.faculty,
           desiredPosition: formData.desiredPosition,
           desiredYear: formData.desiredYear,
+          age: formData.age,
           email: formData.email,
           interests: formData.interests,
           comments: formData.comments,
@@ -335,6 +338,25 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
           </select>
           {errors.desiredYear && (
             <div className="invalid-feedback">{errors.desiredYear}</div>
+          )}
+        </div>
+
+        {/* Age */}
+        <div className="mb-3 mb-md-4">
+          <label className="form-label fw-semibold" style={{ fontSize: '0.9rem', color: '#333333' }}>
+            Age / 年齢
+          </label>
+          <input
+            type="number"
+            value={formData.age}
+            onChange={(e) => handleChange('age', e.target.value)}
+            className={`form-control ${errors.age ? 'is-invalid' : ''}`}
+            placeholder="Age / 年齢"
+            min="1"
+            max="150"
+          />
+          {errors.age && (
+            <div className="invalid-feedback">{errors.age}</div>
           )}
         </div>
 

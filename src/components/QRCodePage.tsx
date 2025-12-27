@@ -8,7 +8,7 @@ import QRCodeDisplay from './QRCodeDisplay'
 const QRCodePage = () => {
   // Use environment variable if set, otherwise use the production Vercel URL
   // You can override this by setting VITE_FORM_URL in Vercel environment variables
-  const productionUrl = 'https://nortiq-forms-vercel-7z71oitew-ashwin-kalyans-projects.vercel.app'
+  const productionUrl = 'https://form-frontend-vercel.vercel.app'
   const formUrl = import.meta.env.VITE_FORM_URL || productionUrl
 
   return (

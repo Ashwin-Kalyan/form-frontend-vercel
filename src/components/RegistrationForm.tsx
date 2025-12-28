@@ -151,24 +151,62 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
 
   return (
     <div>
-      {/* Logo at Top Center */}
+      {/* Logos at Top Center */}
       <div className="text-center mb-3" style={{ padding: '0 0.5rem' }}>
-        <img 
-          src="/logo.png" 
-          alt="Kyowa Technologies Logo" 
-          style={{ 
-            height: 'clamp(3.5rem, 8vw, 6.5rem)',
-            width: 'auto',
-            maxWidth: '100%',
-            objectFit: 'contain',
-            display: 'inline-block',
-            margin: '0 auto'
-          }}
-          onError={(e) => {
-            console.error('Logo failed to load');
-            e.currentTarget.style.display = 'none';
-          }}
-        />
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          gap: '1rem',
+          flexWrap: 'wrap'
+        }}>
+          <img 
+            src="/logo.png" 
+            alt="Kyowa Technologies Logo" 
+            style={{ 
+              height: 'clamp(3.5rem, 8vw, 6.5rem)',
+              width: 'auto',
+              maxWidth: '100%',
+              objectFit: 'contain',
+              display: 'inline-block'
+            }}
+            onError={(e) => {
+              console.error('Logo 1 failed to load');
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+          <img 
+            src="/logo2.png" 
+            alt="Logo 2" 
+            style={{ 
+              height: 'clamp(3.5rem, 8vw, 6.5rem)',
+              width: 'auto',
+              maxWidth: '100%',
+              objectFit: 'contain',
+              display: 'inline-block',
+              transform: 'rotate(-8deg)'
+            }}
+            onError={(e) => {
+              console.error('Logo 2 failed to load');
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+          <img 
+            src="/logo3.png" 
+            alt="Logo 3" 
+            style={{ 
+              height: 'clamp(3.5rem, 8vw, 6.5rem)',
+              width: 'auto',
+              maxWidth: '100%',
+              objectFit: 'contain',
+              display: 'inline-block'
+            }}
+            onError={(e) => {
+              console.error('Logo 3 failed to load');
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        </div>
       </div>
 
       {/* Company Name */}

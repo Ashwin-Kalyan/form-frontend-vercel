@@ -151,62 +151,24 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
 
   return (
     <div>
-      {/* Logos at Top Center */}
+      {/* Logo at Top Center */}
       <div className="text-center mb-3" style={{ padding: '0 0.5rem' }}>
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
-          alignItems: 'center', 
-          gap: '1rem',
-          flexWrap: 'wrap'
-        }}>
-          <img 
-            src="/logo.png" 
-            alt="Kyowa Technologies Logo" 
-            style={{ 
-              height: 'clamp(3.5rem, 8vw, 6.5rem)',
-              width: 'auto',
-              maxWidth: '100%',
-              objectFit: 'contain',
-              display: 'inline-block'
-            }}
-            onError={(e) => {
-              console.error('Logo 1 failed to load');
-              e.currentTarget.style.display = 'none';
-            }}
-          />
-          <img 
-            src="/logo2.png" 
-            alt="Logo 2" 
-            style={{ 
-              height: 'clamp(3.5rem, 8vw, 6.5rem)',
-              width: 'auto',
-              maxWidth: '100%',
-              objectFit: 'contain',
-              display: 'inline-block',
-              transform: 'rotate(-8deg)'
-            }}
-            onError={(e) => {
-              console.error('Logo 2 failed to load');
-              e.currentTarget.style.display = 'none';
-            }}
-          />
-          <img 
-            src="/logo3.png" 
-            alt="Logo 3" 
-            style={{ 
-              height: 'clamp(3.5rem, 8vw, 6.5rem)',
-              width: 'auto',
-              maxWidth: '100%',
-              objectFit: 'contain',
-              display: 'inline-block'
-            }}
-            onError={(e) => {
-              console.error('Logo 3 failed to load');
-              e.currentTarget.style.display = 'none';
-            }}
-          />
-        </div>
+        <img 
+          src="/logo.png" 
+          alt="Kyowa Technologies Logo" 
+          style={{ 
+            height: 'clamp(3.5rem, 8vw, 6.5rem)',
+            width: 'auto',
+            maxWidth: '100%',
+            objectFit: 'contain',
+            display: 'inline-block',
+            margin: '0 auto'
+          }}
+          onError={(e) => {
+            console.error('Logo failed to load');
+            e.currentTarget.style.display = 'none';
+          }}
+        />
       </div>
 
       {/* Company Name */}
@@ -379,6 +341,25 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
           )}
         </div>
 
+        {/* Logo 3 below Desired Year to Work */}
+        <div className="text-center mb-3 mb-md-4" style={{ padding: '0 0.5rem' }}>
+          <img 
+            src="/logo3.png" 
+            alt="Logo 3" 
+            style={{ 
+              height: 'clamp(3rem, 6vw, 5rem)',
+              width: 'auto',
+              maxWidth: '100%',
+              objectFit: 'contain',
+              display: 'inline-block'
+            }}
+            onError={(e) => {
+              console.error('Logo 3 failed to load');
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        </div>
+
         {/* Age */}
         <div className="mb-3 mb-md-4">
           <label className="form-label fw-semibold" style={{ fontSize: '0.9rem', color: '#333333' }}>
@@ -518,8 +499,47 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
         </div>
       </form>
 
-      {/* Company Name at Bottom */}
+      {/* Company Name at Bottom with Logos 2 and 4 */}
       <div className="text-center mt-4 pt-3" style={{ borderTop: '1px solid rgba(0,0,0,0.1)' }}>
+        <div className="mb-3" style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          gap: '1rem',
+          flexWrap: 'wrap'
+        }}>
+          <img 
+            src="/logo2.png" 
+            alt="Logo 2" 
+            style={{ 
+              height: 'clamp(2.5rem, 5vw, 4rem)',
+              width: 'auto',
+              maxWidth: '100%',
+              objectFit: 'contain',
+              display: 'inline-block'
+            }}
+            onError={(e) => {
+              console.error('Logo 2 failed to load');
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+          <img 
+            src="/logo4.png" 
+            alt="Logo 4" 
+            style={{ 
+              height: 'clamp(2.5rem, 5vw, 4rem)',
+              width: 'auto',
+              maxWidth: '100%',
+              objectFit: 'contain',
+              display: 'inline-block',
+              transform: 'rotate(-8deg)'
+            }}
+            onError={(e) => {
+              console.error('Logo 4 failed to load');
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        </div>
         <p className="fw-bold mb-0" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)', color: '#00B7CE' }}>
           Kyowa Technologies Co., Ltd.
         </p>

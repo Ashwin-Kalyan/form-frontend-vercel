@@ -512,7 +512,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
             src="/logo2.png" 
             alt="Logo 2" 
             style={{ 
-              height: 'clamp(2.5rem, 5vw, 4rem)',
+              height: 'clamp(3.5rem, 8vw, 6.5rem)',
               width: 'auto',
               maxWidth: '100%',
               objectFit: 'contain',
@@ -527,7 +527,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
             src="/logo4.png" 
             alt="Logo 4" 
             style={{ 
-              height: 'clamp(2.5rem, 5vw, 4rem)',
+              height: 'clamp(3.5rem, 8vw, 6.5rem)',
               width: 'auto',
               maxWidth: '100%',
               objectFit: 'contain',

@@ -8,6 +8,9 @@ interface SuccessModalProps {
 }
 
 const SuccessModal = ({ onClose, data }: SuccessModalProps) => {
+  // Extract first name from full name
+  const firstName = data.fullName.split(' ')[0] || data.fullName
+  
   return (
     <div 
       className="modal fade show d-block" 
@@ -37,7 +40,7 @@ const SuccessModal = ({ onClose, data }: SuccessModalProps) => {
               borderBottom: '2px solid #00B7CE', 
               paddingBottom: '0.75rem' 
             }}>
-              <div className="d-flex align-items-center gap-2 mb-2">
+              <div className="d-flex align-items-center gap-2">
                 <svg
                   width="20"
                   height="20"
@@ -48,14 +51,9 @@ const SuccessModal = ({ onClose, data }: SuccessModalProps) => {
                   <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
                 </svg>
                 <strong style={{ color: '#333333', fontSize: '1rem' }}>
-                  確認メール / Confirmation Email
+                  ありがとうございます！ / Thank you!!
                 </strong>
               </div>
-              {data.email && (
-                <p className="mb-0 small text-muted" style={{ marginLeft: '28px' }}>
-                  To: {data.email}
-                </p>
-              )}
             </div>
 
             {/* Email Message Content */}
@@ -84,7 +82,7 @@ const SuccessModal = ({ onClose, data }: SuccessModalProps) => {
               {/* English Section */}
               <div>
                 <p className="mb-3">
-                  <strong>Dear All,</strong>
+                  <strong>Dear {firstName},</strong>
                 </p>
                 <p className="mb-3">
                   Thanks for visiting our booth today! we'll be in touch soon!

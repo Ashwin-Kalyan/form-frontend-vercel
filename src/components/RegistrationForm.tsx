@@ -341,25 +341,6 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
           )}
         </div>
 
-        {/* Logo 3 below Desired Year to Work */}
-        <div className="text-center mb-3 mb-md-4" style={{ padding: '0 0.5rem' }}>
-          <img 
-            src="/logo3.png" 
-            alt="Logo 3" 
-            style={{ 
-              height: 'clamp(3rem, 6vw, 5rem)',
-              width: 'auto',
-              maxWidth: '100%',
-              objectFit: 'contain',
-              display: 'inline-block'
-            }}
-            onError={(e) => {
-              console.error('Logo 3 failed to load');
-              e.currentTarget.style.display = 'none';
-            }}
-          />
-        </div>
-
         {/* Age */}
         <div className="mb-3 mb-md-4">
           <label className="form-label fw-semibold" style={{ fontSize: '0.9rem', color: '#333333' }}>

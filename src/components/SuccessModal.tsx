@@ -32,61 +32,85 @@ const SuccessModal = ({ onClose, data }: SuccessModalProps) => {
             ></button>
           </div>
           <div className="modal-body">
-            {/* Success Icon */}
-            <div className="text-center mb-4">
-              <div className="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style={{ width: '64px', height: '64px' }}>
+            {/* Email Message Header */}
+            <div className="mb-3" style={{ 
+              borderBottom: '2px solid #00B7CE', 
+              paddingBottom: '0.75rem' 
+            }}>
+              <div className="d-flex align-items-center gap-2 mb-2">
                 <svg
-                  className="text-success"
-                  width="32"
-                  height="32"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  style={{ color: '#00B7CE' }}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
+                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
                 </svg>
+                <strong style={{ color: '#333333', fontSize: '1rem' }}>
+                  確認メール / Confirmation Email
+                </strong>
               </div>
+              {data.email && (
+                <p className="mb-0 small text-muted" style={{ marginLeft: '28px' }}>
+                  To: {data.email}
+                </p>
+              )}
             </div>
 
-            {/* Thank you message */}
-            <div className="alert alert-info">
-              <p className="mb-2">
-                <strong>{data.fullName}</strong> 様
-              </p>
-              <p className="mb-2">
-                この度は、展示会来訪者入力フォームにご登録いただき、誠にありがとうございます。
-              </p>
-              <p className="mb-2">
-                ご入力いただいた内容を確認させていただきました。後日、担当者よりご連絡させていただきますので、今しばらくお待ちください。
-              </p>
-              <hr className="my-3" />
-              <p className="mb-2">
-                Dear <strong>{data.fullName}</strong>,
-              </p>
-              <p className="mb-2">
-                Thank you for registering through our Job Fair Visitor Registration Form.
-              </p>
-              <p className="mb-0">
-                We have received your information and will review it carefully. Our team will contact you in the near future.
-              </p>
-            </div>
-
-            {/* Email notification */}
-            <div className="alert alert-warning">
-              <p className="mb-0 small">
-                <strong>確認メール / Confirmation Email:</strong>
-                <br />
-                登録されたメールアドレス（<strong>{data.email}</strong>）に確認メールが送信されます。
-                <br />
-                <span className="text-muted">
-                  A confirmation email has been sent to your registered email address.
-                </span>
-              </p>
+            {/* Email Message Content */}
+            <div style={{ 
+              backgroundColor: '#ffffff',
+              border: '1px solid #e0e0e0',
+              borderRadius: '8px',
+              padding: '1.5rem',
+              lineHeight: '1.8'
+            }}>
+              {/* Japanese Section */}
+              <div className="mb-4">
+                <p className="mb-3">
+                  本日はブースにお立ち寄りいただき、誠にありがとうございます。ご応募いただいた内容を確認させていただきました。後日、担当者よりご連絡させていただきます。
+                </p>
+                <p className="mb-3">
+                  私たちは、日本において止まってはならない社会インフラを支える通信技術に取り組んでいます。
+                </p>
+                <p className="mb-3">
+                  これから日本で学び、経験を積み、将来タイで活躍したいという皆様とお会いできることを楽しみにしております。
+                </p>
+              </div>
+              
+              <hr className="my-4" style={{ borderColor: '#e0e0e0' }} />
+              
+              {/* English Section */}
+              <div>
+                <p className="mb-3">
+                  <strong>Dear All,</strong>
+                </p>
+                <p className="mb-3">
+                  Thanks for visiting our booth today! we'll be in touch soon!
+                </p>
+                <p className="mb-3">
+                  Our mission is engineering the critical communication technologies that keep essential infrastructure running in Japan.
+                </p>
+                <p className="mb-4">
+                  Join us in Japan and grow with us! We guide you and we learn together!
+                </p>
+              </div>
+              
+              <div className="mt-4 pt-3" style={{ borderTop: '1px solid #e0e0e0' }}>
+                <p className="mb-2">
+                  <strong>Yours sincerely,</strong>
+                </p>
+                <p className="mb-1">
+                  <strong>十河元太郎 (Gentaro Sogo)</strong>
+                </p>
+                <p className="mb-1">
+                  <strong>CEO 協和テクノロジィズ株式会社 (Kyowa Technologies Co., Ltd.)</strong>
+                </p>
+                <p className="mb-0 small text-muted">
+                  採用専用メールアドレス / Recruitment dedicated email address: r-hirata@star.kyotec.co.jp
+                </p>
+              </div>
             </div>
           </div>
           <div className="modal-footer border-0 justify-content-center">

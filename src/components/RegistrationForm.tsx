@@ -39,6 +39,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
 
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false)
 
   const handleChange = (field: keyof FormData, value: string | string[]) => {
     setFormData(prev => ({ ...prev, [field]: value }))
@@ -82,19 +83,22 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
     if (!formData.desiredYear) {
       newErrors.desiredYear = 'Desired year to work is required / 就職希望年度は必須です'
     }
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required / メールアドレスは必須です'
-    } else {
+    // Email is optional, but if provided, validate format
+    if (formData.email.trim()) {
       // Validate email format: name@example.com
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
       if (!emailRegex.test(formData.email)) {
         newErrors.email = 'Please enter a valid email address / 有効なメールアドレスを入力してください'
       }
-    }
-    if (!formData.emailConfirm.trim()) {
-      newErrors.emailConfirm = 'Email confirmation is required / メールアドレス確認は必須です'
-    } else if (formData.email !== formData.emailConfirm) {
-      newErrors.emailConfirm = 'Emails do not match / メールアドレスが一致しません'
+      // If email is provided, confirmation is required
+      if (!formData.emailConfirm.trim()) {
+        newErrors.emailConfirm = 'Email confirmation is required / メールアドレス確認は必須です'
+      } else if (formData.email !== formData.emailConfirm) {
+        newErrors.emailConfirm = 'Emails do not match / メールアドレスが一致しません'
+      }
+    } else if (formData.emailConfirm.trim()) {
+      // If confirmation is provided but email is not, show error
+      newErrors.emailConfirm = 'Please enter email address first / まずメールアドレスを入力してください'
     }
     if (!formData.interests || formData.interests.length === 0) {
       newErrors.interests = 'Please select at least one interest / 少なくとも1つ選択してください'
@@ -363,7 +367,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
         {/* Email */}
         <div className="mb-3 mb-md-4">
           <label className="form-label fw-semibold" style={{ fontSize: '0.9rem', color: '#333333' }}>
-            Email Address / メールアドレス <span className="text-danger">*</span>
+            Email Address / メールアドレス
           </label>
           <input
             type="email"
@@ -380,7 +384,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
         {/* Email Confirmation */}
         <div className="mb-3 mb-md-4">
           <label className="form-label fw-semibold" style={{ fontSize: '0.9rem', color: '#333333' }}>
-            Email Address (Confirmation) / メールアドレス（確認） <span className="text-danger">*</span>
+            Email Address (Confirmation) / メールアドレス（確認）
           </label>
           <input
             type="email"
@@ -465,6 +469,105 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
           {errors.privacyConsent && (
             <div className="text-danger small mt-1">{errors.privacyConsent}</div>
           )}
+          
+          {/* Privacy Policy Dropdown */}
+          <div className="mt-3" style={{ borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: '1rem' }}>
+            <button
+              type="button"
+              onClick={() => setIsPrivacyPolicyOpen(!isPrivacyPolicyOpen)}
+              className="btn btn-link p-0 text-decoration-none d-flex align-items-center justify-content-between w-100"
+              style={{ 
+                color: '#00B7CE',
+                fontWeight: '500',
+                fontSize: '0.9rem',
+                textAlign: 'left'
+              }}
+            >
+              <span>Click to read privacy policy / プライバシーポリシーを読む</span>
+              <span 
+                style={{ 
+                  transform: isPrivacyPolicyOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                  transition: 'transform 0.3s ease',
+                  fontSize: '0.8rem',
+                  marginLeft: '0.5rem'
+                }}
+              >
+                ▼
+              </span>
+            </button>
+            
+            <div
+              style={{
+                maxHeight: isPrivacyPolicyOpen ? '2000px' : '0',
+                overflow: 'hidden',
+                transition: 'max-height 0.4s ease-out',
+                marginTop: isPrivacyPolicyOpen ? '1rem' : '0'
+              }}
+            >
+              <div 
+                style={{ 
+                  padding: '1.5rem',
+                  backgroundColor: '#f8f9fa',
+                  borderRadius: '8px',
+                  border: '1px solid #e9ecef',
+                  fontSize: '0.85rem',
+                  lineHeight: '1.6',
+                  color: '#333333'
+                }}
+              >
+                {/* Japanese Privacy Policy */}
+                <div className="mb-4">
+                  <h6 className="fw-bold mb-3" style={{ color: '#00B7CE', fontSize: '1rem' }}>
+                    個人情報の取扱いについて
+                  </h6>
+                  <p style={{ marginBottom: '0.75rem' }}>
+                    本フォームで取得する個人情報（氏名、メールアドレス、その他入力内容）は、採用への応募お問い合わせへの対応およびそれに必要なご連絡の目的にのみ利用します。
+                  </p>
+                  <p style={{ marginBottom: '0.75rem' }}>
+                    当社はPDPA（タイ個人データ保護法）の趣旨に基づき個人情報を適切に管理し、入力者への全ての連絡および要件が終了次第60日以内に、安全な方法で全データを削除・破棄します（法令等により保存が必要な場合を除きます）。ご本人の同意なく、第三者へ個人情報を提供することはありません。
+                  </p>
+                  <p style={{ marginBottom: '0.75rem' }}>
+                    個人情報の取扱いに関するお問い合わせ：<br />
+                    協和テクノロジイズ株式会社 採用担当 平田<br />
+                    E-mail： r-hirata@star.kyotec.co.jp
+                  </p>
+                </div>
+
+                {/* English Privacy Policy */}
+                <div style={{ borderTop: '1px solid #dee2e6', paddingTop: '1rem' }}>
+                  <h6 className="fw-bold mb-3" style={{ color: '#00B7CE', fontSize: '1rem' }}>
+                    Privacy Notice
+                  </h6>
+                  <p style={{ marginBottom: '0.75rem' }}>
+                    Personal data collected through this form (including your name, email address, and any other information you provide) will be used only for responding to your inquiries and for the recruitment related purposes such as screening, communication, and administration, and only to the extent necessary for the recruitment operations.
+                  </p>
+                  <p style={{ marginBottom: '0.75rem' }}>
+                    When collecting personal data, we clearly specify the purpose of use and obtain such data by lawful and fair means. Personal data will not be used for any purpose other than the recruitment application purposes. If it becomes necessary to change the purpose of use, we will notify you in advance and obtain your consent where required.
+                  </p>
+                  <p style={{ marginBottom: '0.75rem' }}>
+                    The provision of personal data is entirely voluntary.
+                  </p>
+                  <p style={{ marginBottom: '0.75rem' }}>
+                    We will not disclose or provide your personal data to any third party without the prior consent, except where disclosure is required by applicable laws or requested by courts, police, tax authorities, or other authorized public institutions.
+                  </p>
+                  <p style={{ marginBottom: '0.75rem' }}>
+                    We comply with Thailand's Personal Data Protection Act (PDPA) and related laws and manage personal data in an appropriate and secure manner.
+                  </p>
+                  <p style={{ marginBottom: '0.75rem' }}>
+                    We implement technical and organizational security measures to prevent unauthorized access, loss, leakage, alteration, or destruction of personal data.
+                  </p>
+                  <p style={{ marginBottom: '0.75rem' }}>
+                    All personal data collected will be securely deleted or disposed of once all communications and related matters with Kyowa Technologies Co., Ltd. have been completed, and in any case within 60 days from the date of collection, unless retention is required by applicable laws.
+                  </p>
+                  <p style={{ marginBottom: '0' }}>
+                    For inquiries regarding the handling of personal data:<br />
+                    Kyowa Technologies Co., Ltd. – HR Contact: Ms. R. Hirata<br />
+                    E-mail: r-hirata@star.kyotec.co.jp
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Submit Button */}

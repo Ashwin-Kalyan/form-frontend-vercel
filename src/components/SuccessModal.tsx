@@ -67,13 +67,13 @@ const SuccessModal = ({ onClose, data }: SuccessModalProps) => {
               {/* Japanese Section */}
               <div className="mb-4">
                 <p className="mb-3">
-                  本日はブースにお立ち寄りいただき、誠にありがとうございます。ご応募いただいた内容を確認させていただきました。後日、担当者よりご連絡させていただきます。
+                  本日のブース訪問、ありがとうございます。貴方のご回答、確かに拝見しました。担当者より改めてご連絡いたします。
                 </p>
                 <p className="mb-3">
-                  私たちは、日本において止まってはならない社会インフラを支える通信技術に取り組んでいます。
+                  私たちは日本で、決して止まってはいけない社会インフラを支える通信技術に取り組んでいます。
                 </p>
                 <p className="mb-3">
-                  これから日本で学び、経験を積み、将来タイで活躍したいという皆様とお会いできることを楽しみにしております。
+                  日本で学び、経験を積み、将来その力をタイで活かしたい方との出会いを楽しみにしています。
                 </p>
               </div>
               
@@ -82,7 +82,7 @@ const SuccessModal = ({ onClose, data }: SuccessModalProps) => {
               {/* English Section */}
               <div>
                 <p className="mb-3">
-                  <strong>Dear {firstName},</strong>
+                  <strong>Dear All,</strong>
                 </p>
                 <p className="mb-3">
                   Thanks for visiting our booth today! we'll be in touch soon!
@@ -100,13 +100,13 @@ const SuccessModal = ({ onClose, data }: SuccessModalProps) => {
                   <strong>Yours sincerely,</strong>
                 </p>
                 <p className="mb-1">
-                  <strong>十河元太郎 (Gentaro Sogo)</strong>
+                  <strong>Gentaro Sogo</strong>
                 </p>
                 <p className="mb-1">
-                  <strong>CEO 協和テクノロジィズ株式会社 (Kyowa Technologies Co., Ltd.)</strong>
+                  <strong>CEO Kyowa Technologies Co., Ltd.</strong>
                 </p>
                 <p className="mb-0 small text-muted">
-                  採用専用メールアドレス / Recruitment dedicated email address: r-hirata@star.kyotec.co.jp
+                  Continued contact: r-hirata@star.kyotec.co.jp
                 </p>
               </div>
             </div>

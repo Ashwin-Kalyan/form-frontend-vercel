@@ -7,7 +7,7 @@ interface SuccessModalProps {
   }
 }
 
-const SuccessModal = ({ onClose, data }: SuccessModalProps) => {
+const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
   return (
     <div 
       className="modal fade show d-block" 

@@ -8,9 +8,6 @@ interface SuccessModalProps {
 }
 
 const SuccessModal = ({ onClose, data }: SuccessModalProps) => {
-  // Extract first name from full name
-  const firstName = data.fullName.split(' ')[0] || data.fullName
-  
   return (
     <div 
       className="modal fade show d-block" 

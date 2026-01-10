@@ -54,27 +54,13 @@ const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
             </div>
 
             {/* Email Message Content */}
-            <div className="d-flex gap-3" style={{ flexWrap: 'wrap' }}>
-              <img 
-                src="/logo.png" 
-                alt="Kyowa Technologies Logo" 
-                style={{ 
-                  height: '80px',
-                  width: 'auto',
-                  objectFit: 'contain',
-                  flexShrink: 0,
-                  alignSelf: 'flex-start'
-                }}
-              />
-              <div style={{ 
-                backgroundColor: '#ffffff',
-                border: '1px solid #e0e0e0',
-                borderRadius: '8px',
-                padding: '1.5rem',
-                lineHeight: '1.8',
-                flex: '1',
-                minWidth: '250px'
-              }}>
+            <div style={{ 
+              backgroundColor: '#ffffff',
+              border: '1px solid #e0e0e0',
+              borderRadius: '8px',
+              padding: '1.5rem',
+              lineHeight: '1.8'
+            }}>
               {/* Japanese Section */}
               <div className="mb-4">
                 <p className="mb-3">
@@ -107,22 +93,37 @@ const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
               </div>
               
               <div className="mt-4 pt-3" style={{ borderTop: '1px solid #e0e0e0' }}>
-                <p className="mb-2">
-                  <strong>Yours sincerely,</strong><br />
-                  <span style={{ fontSize: '0.9em', color: '#666666' }}>敬具</span>
-                </p>
-                <p className="mb-1">
-                  <strong>Gentaro Sogo</strong>
-                </p>
-                <p className="mb-1">
-                  <strong>CEO Kyowa Technologies Co., Ltd.</strong><br />
-                  <span style={{ fontSize: '0.9em', color: '#666666' }}>CEO 京和テクノロジーズ株式会社</span>
-                </p>
-                <p className="mb-0 small text-muted">
-                  Continued contact: <span style={{ whiteSpace: 'nowrap' }}>r-hirata@star.kyotec.co.jp</span><br />
-                  <span style={{ fontSize: '0.9em', color: '#666666' }}>継続連絡先: <span style={{ whiteSpace: 'nowrap' }}>r-hirata@star.kyotec.co.jp</span></span>
-                </p>
-              </div>
+                <div className="d-flex align-items-start gap-3">
+                  <img 
+                    src="/logo.png" 
+                    alt="Kyowa Technologies Logo" 
+                    style={{ 
+                      height: '60px',
+                      width: 'auto',
+                      objectFit: 'contain',
+                      flexShrink: 0,
+                      alignSelf: 'flex-start'
+                    }}
+                  />
+                  <div style={{ flex: '1' }}>
+                    <p className="mb-2">
+                      <strong>Yours sincerely,</strong><br />
+                      <span style={{ fontSize: '0.9em', color: '#666666' }}>敬具</span>
+                    </p>
+                    <p className="mb-1">
+                      <strong>Gentaro Sogo</strong><br />
+                      <span style={{ fontSize: '0.9em', color: '#666666' }}>ゲンタロウ・ソウゴ</span>
+                    </p>
+                    <p className="mb-1">
+                      <strong>CEO Kyowa Technologies Co., Ltd.</strong><br />
+                      <span style={{ fontSize: '0.9em', color: '#666666' }}>CEO 京和テクノロジーズ株式会社</span>
+                    </p>
+                    <p className="mb-0 small text-muted">
+                      Continued contact: <span style={{ whiteSpace: 'nowrap' }}>r-hirata@star.kyotec.co.jp</span><br />
+                      <span style={{ fontSize: '0.9em', color: '#666666' }}>継続連絡先: <span style={{ whiteSpace: 'nowrap' }}>r-hirata@star.kyotec.co.jp</span></span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

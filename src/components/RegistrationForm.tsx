@@ -178,10 +178,11 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
       {/* Company Name */}
       <div className="text-center mb-3" style={{ padding: '0 0.5rem' }}>
         <h1 className="fw-bold mb-2" style={{ 
-          fontSize: 'clamp(1.25rem, 4vw, 3.5rem)', 
+          fontSize: 'clamp(1.5rem, 5vw, 3.5rem)', 
           color: '#00B7CE', 
           margin: 0, 
-          whiteSpace: 'nowrap',
+          wordBreak: 'break-word',
+          hyphens: 'auto',
           lineHeight: '1.2'
         }}>
           Kyowa Technologies Co., Ltd.
@@ -190,27 +191,26 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
 
       {/* Main Message */}
       <h2 className="text-center mb-3 mb-md-4 fw-bold" style={{ 
-        fontSize: 'clamp(0.95rem, 3.2vw, 2.75rem)', 
+        fontSize: 'clamp(1.25rem, 4vw, 2.75rem)', 
         color: '#333333', 
         lineHeight: '1.3',
         padding: '0 0.5rem',
-        wordBreak: 'break-word',
-        maxWidth: '100%',
-        overflow: 'hidden'
+        wordBreak: 'break-word'
       }}>
-        Connect with us!!! <span style={{ whiteSpace: 'nowrap' }}>For Internships and Employment</span> and MORE!!!
+        Connect with us!!! For Internships and Employment and MORE!!!
       </h2>
 
       {/* Subtitle */}
       <p className="text-center mb-4 mb-md-5" style={{ 
         color: '#333333', 
-        fontSize: 'clamp(1rem, 2.3vw, 1.75rem)', 
+        fontSize: 'clamp(1rem, 2.5vw, 1.75rem)', 
         fontWeight: '600',
         padding: '0 0.5rem',
+        wordBreak: 'break-word',
         lineHeight: '1.4'
       }}>
-        Work with us in Japan!!! <span style={{ whiteSpace: 'nowrap' }}>We will contact you!!!</span><br />
-        <span style={{ fontSize: 'clamp(0.75rem, 1.5vw, 1rem)', color: '#666666', fontWeight: '400', whiteSpace: 'nowrap', display: 'inline-block' }}>日本で一緒に働きましょう！ご連絡させていただきます！</span>
+        Work with us in Japan!!! We will contact you!!!<br />
+        <span style={{ fontSize: 'clamp(0.75rem, 1.8vw, 1rem)', color: '#666666', fontWeight: '400' }}>日本で一緒に働きましょう！ご連絡させていただきます！</span>
       </p>
 
       <form onSubmit={handleSubmit}>

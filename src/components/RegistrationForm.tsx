@@ -190,11 +190,13 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
 
       {/* Main Message */}
       <h2 className="text-center mb-3 mb-md-4 fw-bold" style={{ 
-        fontSize: 'clamp(1.4rem, 4vw, 2.75rem)', 
+        fontSize: 'clamp(0.95rem, 3.2vw, 2.75rem)', 
         color: '#333333', 
         lineHeight: '1.3',
         padding: '0 0.5rem',
-        wordBreak: 'break-word'
+        wordBreak: 'break-word',
+        maxWidth: '100%',
+        overflow: 'hidden'
       }}>
         Connect with us!!! <span style={{ whiteSpace: 'nowrap' }}>For Internships and Employment</span> and MORE!!!
       </h2>

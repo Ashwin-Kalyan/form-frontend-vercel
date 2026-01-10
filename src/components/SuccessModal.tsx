@@ -94,6 +94,16 @@ const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
               
               <div className="mt-4 pt-3" style={{ borderTop: '1px solid #e0e0e0' }}>
                 <div className="d-flex align-items-start gap-3">
+                  <div style={{ flex: '1' }}>
+                    <p className="mb-2" style={{ whiteSpace: 'nowrap' }}>
+                      <strong>Yours sincerely,</strong> <strong>Gentaro Sogo CEO Kyowa Technologies Co., Ltd.</strong><br />
+                      <span style={{ fontSize: '0.9em', color: '#666666' }}>敬具 ゲンタロウ・ソウゴ CEO 京和テクノロジーズ株式会社</span>
+                    </p>
+                    <p className="mb-0 small text-muted">
+                      Continued contact: <span style={{ whiteSpace: 'nowrap' }}>r-hirata@star.kyotec.co.jp</span><br />
+                      <span style={{ fontSize: '0.9em', color: '#666666' }}>継続連絡先</span>
+                    </p>
+                  </div>
                   <img 
                     src="/logo.png" 
                     alt="Kyowa Technologies Logo" 
@@ -105,24 +115,6 @@ const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
                       alignSelf: 'flex-start'
                     }}
                   />
-                  <div style={{ flex: '1' }}>
-                    <p className="mb-2">
-                      <strong>Yours sincerely,</strong><br />
-                      <span style={{ fontSize: '0.9em', color: '#666666' }}>敬具</span>
-                    </p>
-                    <p className="mb-1">
-                      <strong>Gentaro Sogo</strong><br />
-                      <span style={{ fontSize: '0.9em', color: '#666666' }}>ゲンタロウ・ソウゴ</span>
-                    </p>
-                    <p className="mb-1">
-                      <strong>CEO Kyowa Technologies Co., Ltd.</strong><br />
-                      <span style={{ fontSize: '0.9em', color: '#666666' }}>CEO 京和テクノロジーズ株式会社</span>
-                    </p>
-                    <p className="mb-0 small text-muted">
-                      Continued contact: <span style={{ whiteSpace: 'nowrap' }}>r-hirata@star.kyotec.co.jp</span><br />
-                      <span style={{ fontSize: '0.9em', color: '#666666' }}>継続連絡先: <span style={{ whiteSpace: 'nowrap' }}>r-hirata@star.kyotec.co.jp</span></span>
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>

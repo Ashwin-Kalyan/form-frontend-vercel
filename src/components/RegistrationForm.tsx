@@ -178,7 +178,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
       {/* Company Name */}
       <div className="text-center mb-3" style={{ padding: '0 0.5rem' }}>
         <h1 className="fw-bold mb-2" style={{ 
-          fontSize: 'clamp(0.75rem, 3.5vw, 3.5rem)', 
+          fontSize: 'clamp(1rem, 4vw, 3.5rem)', 
           color: '#00B7CE', 
           margin: 0, 
           whiteSpace: 'nowrap',
@@ -196,7 +196,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
         padding: '0 0.5rem',
         wordBreak: 'break-word'
       }}>
-        Connect with us!!! For Internships and Employment and MORE!!!
+        Connect with us!!! <span style={{ whiteSpace: 'nowrap' }}>For Internships and Employment</span> and MORE!!!
       </h2>
 
       {/* Subtitle */}
@@ -208,7 +208,7 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
         lineHeight: '1.4'
       }}>
         Work with us in Japan!!! <span style={{ whiteSpace: 'nowrap' }}>We will contact you!!!</span><br />
-        <span style={{ fontSize: 'clamp(0.75rem, 1.8vw, 1rem)', color: '#666666', fontWeight: '400' }}>日本で一緒に働きましょう！ご連絡させていただきます！</span>
+        <span style={{ fontSize: 'clamp(0.625rem, 1.5vw, 1rem)', color: '#666666', fontWeight: '400', whiteSpace: 'nowrap', display: 'inline-block' }}>日本で一緒に働きましょう！ご連絡させていただきます！</span>
       </p>
 
       <form onSubmit={handleSubmit}>

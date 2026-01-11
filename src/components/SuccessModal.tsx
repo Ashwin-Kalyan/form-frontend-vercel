@@ -93,11 +93,29 @@ const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
               </div>
               
               <div className="mt-4 pt-3" style={{ borderTop: '1px solid #e0e0e0' }}>
-                <p className="mb-2">
-                  <strong>Yours sincerely,</strong>
-                  <br />
-                  <span style={{ color: '#888888' }}>敬具</span>
-                </p>
+                <div className="d-flex align-items-start gap-3 mb-2">
+                  <p className="mb-0">
+                    <strong>Yours sincerely,</strong>
+                    <br />
+                    <span style={{ color: '#888888' }}>敬具</span>
+                  </p>
+                  <img 
+                    src="/logo.png" 
+                    alt="Kyowa Technologies Logo" 
+                    style={{ 
+                      height: 'auto',
+                      width: 'auto',
+                      maxHeight: '60px',
+                      maxWidth: '120px',
+                      objectFit: 'contain',
+                      marginTop: '4px'
+                    }}
+                    onError={(e) => {
+                      console.error('Logo failed to load');
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                </div>
                 <p className="mb-1">
                   <strong>Gentaro Sogo</strong>
                   <br />

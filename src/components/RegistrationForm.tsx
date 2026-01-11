@@ -176,14 +176,14 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
       </div>
 
       {/* Company Name */}
-      <div className="text-center mb-3" style={{ padding: '0 0.5rem' }}>
+      <div className="text-center mb-3" style={{ padding: '0 0.5rem', overflow: 'hidden' }}>
         <h1 className="fw-bold mb-2" style={{ 
-          fontSize: 'clamp(1.5rem, 5vw, 3.5rem)', 
+          fontSize: 'clamp(0.875rem, 5vw, 3.5rem)', 
           color: '#00B7CE', 
           margin: 0, 
-          wordBreak: 'break-word',
-          hyphens: 'auto',
-          lineHeight: '1.2'
+          whiteSpace: 'nowrap',
+          lineHeight: '1.2',
+          overflow: 'hidden'
         }}>
           Kyowa Technologies Co., Ltd.
         </h1>
@@ -191,26 +191,28 @@ const RegistrationForm = ({ onSubmit }: RegistrationFormProps) => {
 
       {/* Main Message */}
       <h2 className="text-center mb-3 mb-md-4 fw-bold" style={{ 
-        fontSize: 'clamp(1.25rem, 4vw, 2.75rem)', 
+        fontSize: 'clamp(0.875rem, 4vw, 2.75rem)', 
         color: '#333333', 
         lineHeight: '1.3',
         padding: '0 0.5rem',
-        wordBreak: 'break-word'
+        overflow: 'hidden'
       }}>
-        Connect with us!!! For Internships and Employment and MORE!!!
+        <span style={{ whiteSpace: 'nowrap', display: 'inline-block', maxWidth: '100%', overflow: 'hidden' }}>Connect with us!!!</span><br />
+        <span style={{ whiteSpace: 'nowrap', display: 'inline-block', maxWidth: '100%', overflow: 'hidden' }}>For Internships and Employment</span><br />
+        <span style={{ whiteSpace: 'nowrap', display: 'inline-block', maxWidth: '100%', overflow: 'hidden' }}>and MORE!!!</span>
       </h2>
 
       {/* Subtitle */}
       <p className="text-center mb-4 mb-md-5" style={{ 
         color: '#333333', 
-        fontSize: 'clamp(1rem, 2.5vw, 1.75rem)', 
+        fontSize: 'clamp(0.875rem, 2.5vw, 1.75rem)', 
         fontWeight: '600',
         padding: '0 0.5rem',
-        wordBreak: 'break-word',
-        lineHeight: '1.4'
+        lineHeight: '1.4',
+        overflow: 'hidden'
       }}>
-        Work with us in Japan!!! We will contact you!!!<br />
-        <span style={{ fontSize: 'clamp(0.75rem, 1.8vw, 1rem)', color: '#666666', fontWeight: '400' }}>日本で一緒に働きましょう！ご連絡させていただきます！</span>
+        <span style={{ whiteSpace: 'nowrap', display: 'inline-block', maxWidth: '100%', overflow: 'hidden' }}>Work with us in Japan!!! We will contact you!!!</span><br />
+        <span style={{ fontSize: 'clamp(0.7rem, 1.8vw, 1rem)', color: '#666666', fontWeight: '400', whiteSpace: 'nowrap', display: 'inline-block', maxWidth: '100%', overflow: 'hidden' }}>日本で一緒に働きましょう！ご連絡させていただきます！</span>
       </p>
 
       <form onSubmit={handleSubmit}>

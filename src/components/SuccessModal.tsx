@@ -87,30 +87,31 @@ const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
                 <p className="mb-3">
                   Our mission is engineering the critical communication technologies that keep essential infrastructure running in Japan.
                 </p>
-                <p className="mb-2">
-                  Join us in Japan and grow with us!
-                  <br />
-                  <span style={{ color: '#888888' }}>日本で私たちと一緒に成長しましょう！</span>
-                </p>
                 <p className="mb-4">
-                  We guide you and we learn together!
-                  <br />
-                  <span style={{ color: '#888888' }}>私たちはあなたを導き、共に学びます！</span>
+                  Join us in Japan and grow with us! We guide you and we learn together!
                 </p>
               </div>
               
               <div className="mt-4 pt-3" style={{ borderTop: '1px solid #e0e0e0' }}>
                 <p className="mb-2">
                   <strong>Yours sincerely,</strong>
+                  <br />
+                  <span style={{ color: '#888888' }}>敬具</span>
                 </p>
                 <p className="mb-1">
                   <strong>Gentaro Sogo</strong>
+                  <br />
+                  <span style={{ color: '#888888' }}>相合源太郎</span>
                 </p>
                 <p className="mb-1">
                   <strong>CEO Kyowa Technologies Co., Ltd.</strong>
+                  <br />
+                  <span style={{ color: '#888888' }}>代表取締役社長 協和テクノロジーズ株式会社</span>
                 </p>
-                <p className="mb-0 small text-muted" style={{ whiteSpace: 'nowrap' }}>
-                  Continued contact: r-hirata@star.kyotec.co.jp
+                <p className="mb-0 small text-muted">
+                  <span style={{ whiteSpace: 'nowrap' }}>Continued contact: r-hirata@star.kyotec.co.jp</span>
+                  <br />
+                  <span style={{ color: '#888888' }}>連絡先: r-hirata@star.kyotec.co.jp</span>
                 </p>
               </div>
             </div>

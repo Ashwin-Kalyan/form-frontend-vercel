@@ -87,8 +87,15 @@ const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
                 <p className="mb-3">
                   Our mission is engineering the critical communication technologies that keep essential infrastructure running in Japan.
                 </p>
+                <p className="mb-2">
+                  Join us in Japan and grow with us!
+                  <br />
+                  <span style={{ color: '#888888' }}>日本で私たちと一緒に成長しましょう！</span>
+                </p>
                 <p className="mb-4">
-                  Join us in Japan and grow with us! We guide you and we learn together!
+                  We guide you and we learn together!
+                  <br />
+                  <span style={{ color: '#888888' }}>私たちはあなたを導き、共に学びます！</span>
                 </p>
               </div>
               
@@ -102,7 +109,7 @@ const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
                 <p className="mb-1">
                   <strong>CEO Kyowa Technologies Co., Ltd.</strong>
                 </p>
-                <p className="mb-0 small text-muted">
+                <p className="mb-0 small text-muted" style={{ whiteSpace: 'nowrap' }}>
                   Continued contact: r-hirata@star.kyotec.co.jp
                 </p>
               </div>

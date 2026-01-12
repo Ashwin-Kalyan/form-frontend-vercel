@@ -105,8 +105,8 @@ const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
                     style={{ 
                       height: 'auto',
                       width: 'auto',
-                      maxHeight: '100px',
-                      maxWidth: '200px',
+                      maxHeight: '85px',
+                      maxWidth: '170px',
                       objectFit: 'contain'
                     }}
                     onError={(e) => {

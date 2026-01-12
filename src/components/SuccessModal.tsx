@@ -100,7 +100,7 @@ const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
                     <span style={{ color: '#888888' }}>敬具</span>
                   </p>
                   <img 
-                    src="/logo.png" 
+                    src="/logo5.png" 
                     alt="Kyowa Technologies Logo" 
                     style={{ 
                       height: 'auto',

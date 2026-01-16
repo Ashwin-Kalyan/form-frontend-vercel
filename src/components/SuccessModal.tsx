@@ -72,13 +72,16 @@ const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
                 <p className="mb-3">
                   Our mission is engineering the critical communication technologies that keep essential infrastructure running in Japan.
                 </p>
+                <p className="mb-3">
+                  Join us in Japan and grow with us!
+                </p>
                 <p className="mb-4">
-                  Join us in Japan and grow with us! We guide you and we learn together!
+                  We guide you and we learn together!
                 </p>
               </div>
               
               <div className="mt-4 pt-3" style={{ borderTop: '1px solid #e0e0e0' }}>
-                <div className="d-flex align-items-center gap-3 mb-2">
+                <div className="d-flex align-items-center justify-content-between mb-2">
                   <p className="mb-0">
                     <strong>Yours sincerely,</strong>
                   </p>
@@ -99,7 +102,7 @@ const SuccessModal = ({ onClose, data: _data }: SuccessModalProps) => {
                   />
                 </div>
                 <p className="mb-1">
-                  <strong>Sogou Gentaro</strong>
+                  <strong>Sogo Gentaro</strong>
                 </p>
                 <p className="mb-1">
                   <strong>CEO Kyowa Technologies Co., Ltd.</strong>
